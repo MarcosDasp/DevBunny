@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- ===== Favicon ===== -->
-	<link rel="shortcut icon" href="icon.svg" type="image/x-icon">
+	<link rel="shortcut icon" href="/img/icon.svg" type="image/x-icon">
 
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="/css/style.css">
@@ -200,7 +200,7 @@
 		}
 
 		.hero {
-			background: url('computer2.jpg') no-repeat center center;
+			background: url('/img/computer2.jpg') no-repeat center center;
 			background-size: cover;
 			display: flex;
 			align-items: center;
@@ -209,7 +209,7 @@
 			text-align: center;
 			color: white;
 			overflow: hidden;
-			height: 95vh;
+			height: 100vh;
 		}
 
 		.hero::before {
@@ -228,6 +228,27 @@
 			z-index: 2;
 		}
 
+
+		.hero-content button {
+			margin-top: 50px;
+			transition: all .5s ease;
+			color: #fff;
+			border: 3px solid white;
+			font-family:'Montserrat', sans-serif;
+			text-transform: uppercase;
+			text-align: center;
+			line-height: 1;
+			font-size: 17px;
+			background-color : transparent;
+			padding: 10px;
+			outline: none;
+			border-radius: 25px;
+		}
+		.hero-content button:hover {
+			color: #001F3F;
+			background-color: #fff;
+		}
+
 		.hero h1 {
 			font-size: 2.2em;
 			margin-bottom: 0.5em;
@@ -244,7 +265,7 @@
 		.hero i{
 			position: absolute;
 			font-size: 50px;
-			bottom: 50px;
+			bottom: 25px;
 			animation: float 2s ease-in-out infinite;
 		}
 
@@ -260,6 +281,13 @@
 			}
 		}
 
+		@media (max-width: 790px) {
+			
+			.hero{
+				height: 95vh;
+			}
+
+		}
 
 		.sobre {
 			padding: 100px 20px 0 20px; /* Espaçamento para evitar sobreposição da navbar fixa */
@@ -375,6 +403,7 @@
         <div class="hero-content">
             <h1>Bem-vindo à Dev Bunny</h1>
             <p>Inovadores. Idealizadores.</p>
+			<a href="#sobre"><button>Saiba mais</button></a>
         </div>
 
 		<i class='bx bx-chevrons-down'></i>
@@ -383,7 +412,7 @@
 
 	<section id="sobre" class="sobre">
         <div class="sobre-content">
-            <img src="logo.svg" alt="Logo da Empresa" class="logo_sobre">
+            <img src="/img/logo.svg" alt="Logo da Empresa" class="logo_sobre">
             <div class="texto-sobre">
                 <h2>Sobre Nós</h2>
                 <p>A Dev Bunny é uma startup que se configura como uma software house cuja missão é apoiar a transformação digital de empresas que buscam a Tecnologia como forma de crescimento, sustentação, evolução, continuidade e ampliação de seus negócios. <br>
