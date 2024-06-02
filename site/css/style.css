@@ -1,0 +1,330 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* ===== Colours ===== */
+:root{
+    --body-color: #18191A;
+    --nav-color: #2425265e;
+    --side-nav: #242526;
+    --text-color: #CCC;}
+
+/* ::selection {
+    background: #130912;  Cor de fundo da seleção 
+    color: var(--text-color);       Cor do texto da seleção 
+}
+
+ Estilizando a seleção no Firefox
+::-moz-selection {
+    background: #130912;  Cor de fundo da seleção no Firefox 
+    color: var(--text-color);       Cor do texto da seleção no Firefox 
+} */
+
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+    border: 1px solid #393838;
+}
+
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu .logo-toggle{
+    display: none;
+}
+
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a{
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+
+@media (max-width: 790px) {
+
+    nav .navbar{
+        background-color: var(--nav-color);
+    }
+
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu{
+        left: -0%;
+    }
+
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .siderbarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+section{
+    width: 100%;
+    height: 95vh; /* 95% da altura da viewport */
+    margin-bottom: 100px;
+}
+
+.hero {
+    background: url('/img/computer2.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Escurece a imagem de fundo para melhor legibilidade do texto */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+.hero p, .hero h1{
+    padding: 0 10px 0 10px;
+}
+
+.hero i{
+    position: absolute;
+    font-size: 50px;
+    bottom: 25px;
+	animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+
+.sobre {
+    padding: 100px 20px 0 20px; /* Espaçamento para evitar sobreposição da navbar fixa */
+    text-align: center;
+}
+
+.sobre-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.logo_sobre {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.texto-sobre h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.texto-sobre p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.contato {
+    padding: 100px 20px 0 20px; /* Espaçamento para evitar sobreposição da navbar fixa */
+    text-align: center;
+    color: white;
+}
+
+.mapa-informacoes {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+.mapa {
+    height: 400px;
+    margin-right: 20px;
+}
+
+.mapa iframe{
+    border: 1px solid #393838;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+}
+
+.informacoes-contato {
+    flex: 1;
+    max-width: 400px;
+}
+
+.informacoes-contato .email{
+    color: #0170BC;
+    text-decoration: none;
+}
+
+@media (max-width: 790px) {
+
+    .mapa-informacoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mapa{
+        margin: auto;
+        height: 350px;
+    }
+
+}
+
+.footer {
+    margin-top: 100px;
+    border: 1px solid #393838;
+    background-color: var(--nav-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
