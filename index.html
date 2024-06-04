@@ -5,378 +5,391 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- ===== Favicon ===== -->
 	<link rel="shortcut icon" href="/img/icon.svg" type="image/x-icon">
-
-    <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="/css/style.css">
-        
-    <!-- ===== Boxicons CSS ===== -->
+    <link rel="stylesheet" href="/css/style.css">        
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-     <title>DevBunny</title>
+    <title>DevBunny</title>
 
-	 <style>
-				/* ===== Google Font Import - Poppins ===== */
-		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+	<style>
+		/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-		*{
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			font-family: 'Poppins', sans-serif;
-			transition: all 0.4s ease;;
-			scroll-behavior: smooth;
-			user-select: none;
-		}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+    scroll-behavior: smooth;
+    user-select: none;
+}
 
-		::-webkit-scrollbar{
-			display: none;
-		}
+::-webkit-scrollbar{
+    display: none;
+}
 
-		/* ===== Colours ===== */
-		:root{
-			--body-color: #18191A;
-			--nav-color: #2425265e;
-			--side-nav: #242526;
-			--text-color: #CCC;}
+/* ===== Colours ===== */
+:root{
+    --body-color: #18191A;
+    --nav-color: #2425265e;
+    --side-nav: #242526;
+    --text-color: #CCC;}
 
-		/* ::selection {
-			background: #130912;  Cor de fundo da seleção 
-			color: var(--text-color);       Cor do texto da seleção 
-		}
+/* ::selection {
+    background: #130912;  Cor de fundo da seleção 
+    color: var(--text-color);       Cor do texto da seleção 
+}
 
-		Estilizando a seleção no Firefox
-		::-moz-selection {
-			background: #130912;  Cor de fundo da seleção no Firefox 
-			color: var(--text-color);       Cor do texto da seleção no Firefox 
-		} */
+ Estilizando a seleção no Firefox
+::-moz-selection {
+    background: #130912;  Cor de fundo da seleção no Firefox 
+    color: var(--text-color);       Cor do texto da seleção no Firefox 
+} */
 
-		body{
-			height: 100vh;
-			background-color: var(--body-color);
-		}
-
-
-		nav{
-			position: fixed;
-			top: 0;
-			left: 0;
-			height: 70px;
-			width: 100%;
-			background-color: var(--nav-color);
-			z-index: 100;
-			border: 1px solid #393838;
-		}
-
-		nav .nav-bar{
-			position: relative;
-			height: 100%;
-			max-width: 1000px;
-			width: 100%;
-			margin: 0 auto;
-			padding: 0 30px;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-
-		nav .nav-bar .sidebarOpen{
-			color: var(--text-color);
-			font-size: 25px;
-			padding: 5px;
-			cursor: pointer;
-			display: none;
-		}
-
-		nav .nav-bar .logo a{
-			font-size: 25px;
-			font-weight: 500;
-			color: var(--text-color);
-			text-decoration: none;
-		}
-
-		.menu .logo-toggle{
-			display: none;
-		}
-
-		.nav-bar .nav-links{
-			display: flex;
-			align-items: center;
-		}
-
-		.nav-bar .nav-links li{
-			margin: 0 5px;
-			list-style: none;
-		}
-
-		.nav-links li a{
-			position: relative;
-			font-size: 17px;
-			font-weight: 400;
-			color: var(--text-color);
-			text-decoration: none;
-			padding: 10px;
-		}
-
-		.nav-links li a::before{
-			content: '';
-			position: absolute;
-			left: 50%;
-			bottom: 0;
-			transform: translateX(-50%);
-			height: 6px;
-			width: 6px;
-			border-radius: 50%;
-			background-color: var(--text-color);
-			opacity: 0;
-			transition: all 0.3s ease;
-		}
-
-		.nav-links li:hover a::before{
-			opacity: 1;
-		}
-
-		@media (max-width: 790px) {
-
-			nav .navbar{
-				background-color: var(--nav-color);
-			}
-
-			nav .nav-bar .sidebarOpen{
-				display: block;
-			}
-
-			.menu{
-				position: fixed;
-				height: 100%;
-				width: 320px;
-				left: -100%;
-				top: 0;
-				padding: 20px;
-				background-color: var(--side-nav);
-				z-index: 100;
-				transition: all 0.4s ease;
-			}
-
-			nav.active .menu{
-				left: -0%;
-			}
-
-			nav.active .nav-bar .navLogo a{
-				opacity: 0;
-				transition: all 0.3s ease;
-			}
-
-			.menu .logo-toggle{
-				display: block;
-				width: 100%;
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-			}
-
-			.logo-toggle .siderbarClose{
-				color: var(--text-color);
-				font-size: 24px;
-				cursor: pointer;
-			}
-
-			.nav-bar .nav-links{
-				flex-direction: column;
-				padding-top: 30px;
-			}
-
-			.nav-links li a{
-				display: block;
-				margin-top: 20px;
-			}
-		}
-
-		section{
-			width: 100%;
-			height: 95vh; /* 95% da altura da viewport */
-			margin-bottom: 100px;
-		}
-
-		.hero {
-			background: url('computer2.jpg') no-repeat center center;
-			background-size: cover;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			position: relative;
-			text-align: center;
-			color: white;
-			overflow: hidden;
-			height: 100vh;
-		}
-
-		.hero::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, 0.75); /* Escurece a imagem de fundo para melhor legibilidade do texto */
-			z-index: 1;
-		}
-
-		.hero-content {
-			position: relative;
-			z-index: 2;
-		}
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
 
 
-		.hero-content button {
-			margin-top: 50px;
-			transition: all .5s ease;
-			color: #fff;
-			border: 3px solid white;
-			font-family:'Montserrat', sans-serif;
-			text-transform: uppercase;
-			text-align: center;
-			line-height: 1;
-			font-size: 17px;
-			background-color : transparent;
-			padding: 10px;
-			outline: none;
-			border-radius: 25px;
-		}
-		.hero-content button:hover {
-			color: #001F3F;
-			background-color: #fff;
-		}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+    border: 1px solid #393838;
+}
 
-		.hero h1 {
-			font-size: 2.2em;
-			margin-bottom: 0.5em;
-		}
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-		.hero p {
-			font-size: 1.5em;
-		}
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
 
-		.hero p, .hero h1{
-			padding: 0 10px 0 10px;
-		}
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
 
-		.hero i{
-			position: absolute;
-			font-size: 50px;
-			bottom: 25px;
-			animation: float 2s ease-in-out infinite;
-		}
+.menu .logo-toggle{
+    display: none;
+}
 
-		@keyframes float {
-			0% {
-				transform: translatey(0px);
-			}
-			50% {
-				transform: translatey(-20px);
-			}
-			100% {
-				transform: translatey(0px);
-			}
-		}
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
 
-		@media (max-width: 790px) {
-			
-			.hero{
-				height: 95vh;
-			}
+.nav-bar .nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
 
-		}
+.nav-links li a{
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
 
-		.sobre {
-			padding: 100px 20px 0 20px; /* Espaçamento para evitar sobreposição da navbar fixa */
-			text-align: center;
-		}
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
 
-		.sobre-content {
-			max-width: 800px;
-			margin: 0 auto;
-		}
+.nav-links li:hover a::before{
+    opacity: 1;
+}
 
-		.logo_sobre {
-			width: 200px;
-			height: auto;
-			margin-bottom: 20px;
-		}
+@media (max-width: 790px) {
 
-		.texto-sobre h2 {
-			font-size: 2em;
-			margin-bottom: 20px;
-			color: #fff;
-		}
+    nav .navbar{
+        background-color: var(--nav-color);
+    }
 
-		.texto-sobre p {
-			font-size: 1.2em;
-			line-height: 1.6;
-			color: var(--text-color);
-		}
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
 
-		.contato {
-			padding: 100px 20px 0 20px; /* Espaçamento para evitar sobreposição da navbar fixa */
-			text-align: center;
-			color: white;
-		}
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
 
-		.mapa-informacoes {
-			display: flex;
-			justify-content: center;
-			align-items: flex-start;
-			margin-top: 50px;
-		}
+    nav.active .menu{
+        left: -0%;
+    }
 
-		.mapa {
-			height: 400px;
-			margin-right: 20px;
-		}
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
 
-		.mapa iframe{
-			border: 1px solid #393838;
-			-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
-			-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
-			box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
-		}
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-		.informacoes-contato {
-			flex: 1;
-			max-width: 400px;
-		}
+    .logo-toggle .siderbarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
 
-		.informacoes-contato .email{
-			color: #0170BC;
-			text-decoration: none;
-		}
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
 
-		@media (max-width: 790px) {
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}
 
-			.mapa-informacoes {
-				flex-direction: column;
-				align-items: center;
-			}
+section{
+    width: 100%;
+    height: 95vh; /* 95% da altura da viewport */
+    margin-bottom: 100px;
+}
 
-			.mapa{
-				margin: auto;
-				height: 350px;
-			}
+.hero {
+    background: url('/img/computer2.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+}
 
-		}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Escurece a imagem de fundo para melhor legibilidade do texto */
+    z-index: 1;
+}
 
-		.footer {
-			margin-top: 100px;
-			border: 1px solid #393838;
-			background-color: var(--nav-color);
-			color: #fff;
-			text-align: center;
-			padding: 20px 0;
-		}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
 
 
-	 </style>
+.hero-content button {
+    margin-top: 50px;
+    transition: all .5s ease;
+    color: #fff;
+    border: 3px solid white;
+    font-family:'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 17px;
+    background-color : transparent;
+    padding: 10px;
+    outline: none;
+    border-radius: 25px;
+}
+.hero-content button:hover {
+    color: #001F3F;
+    background-color: #fff;
+}
+
+.hero h1 {
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+.hero p, .hero h1{
+    padding: 0 10px 0 10px;
+}
+
+.hero i{
+    position: absolute;
+    font-size: 50px;
+    bottom: 25px;
+	animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@media (max-width: 790px) {
+    
+    .hero{
+        height: 95vh;
+    }
+
+}
+
+
+.sobre {
+    padding: 70px 20px 0 20px; /* Espaçamento para evitar sobreposição da navbar fixa */
+    text-align: center;
+}
+
+.sobre-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.logo_sobre {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+.texto-sobre h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.texto-sobre p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.texto-parceiro h1{
+    font-size: 1.2em;
+    margin: 35px 0 15px 0;
+    color: #fff;
+}
+
+.sobre_img {
+    width: 200px;
+    height: auto;
+    margin: 0 0 5px 0;
+}
+.contato {
+    padding: 100px 20px 0 20px; /* Espaçamento para evitar sobreposição da navbar fixa */
+    text-align: center;
+    color: white;
+    border-top: 1px solid #393838;
+}
+
+.mapa-informacoes {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+.mapa {
+    height: 400px;
+    margin: 25px;
+}
+
+.mapa iframe{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.informacoes-contato {
+    flex: 1;
+    max-width: 400px;
+    margin-top: 50px;
+}
+
+.informacoes-contato .email{
+    color: #0170BC;
+    text-decoration: none;
+}
+
+@media (max-width: 790px) {
+
+    .mapa-informacoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mapa{
+        margin: auto;
+        height: 350px;
+    }
+
+}
+
+.footer {
+    margin-top: 100px;
+    border: 1px solid #393838;
+    background-color: var(--nav-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+	</style>
 </head>
 <body>
     <nav>
@@ -412,12 +425,17 @@
 
 	<section id="sobre" class="sobre">
         <div class="sobre-content">
-            <img src="logo.svg" alt="Logo da Empresa" class="logo_sobre">
+            <img src="/img/logo.svg" alt="Logo da Empresa" class="logo_sobre">
             <div class="texto-sobre">
                 <h2>Sobre Nós</h2>
                 <p>A Dev Bunny é uma startup que se configura como uma software house cuja missão é apoiar a transformação digital de empresas que buscam a Tecnologia como forma de crescimento, sustentação, evolução, continuidade e ampliação de seus negócios. <br>
 				Temos como meta a criação de novos produtos, serviços ou processos apoiados por TI que sejam inovadores, disruptivos e agregadores de valor ao propósito de negócios corporativos</p>
             </div>
+
+			<div class="texto-parceiro">
+				<h1>Parceiros Oficiais</h1>
+				<img src="/img/partners.jpg" alt="parceiro" class="sobre_img">
+			</div>
         </div>
     </section>
 
@@ -451,29 +469,29 @@
       siderbarClose = document.querySelector(".siderbarClose");
       
 
-//   js code to toggle sidebar
-sidebarOpen.addEventListener("click" , () =>{
-    nav.classList.add("active");
-});
+	//   js code to toggle sidebar
+	sidebarOpen.addEventListener("click" , () =>{
+		nav.classList.add("active");
+	});
 
-body.addEventListener("click" , e =>{
-    let clickedElm = e.target;
+	body.addEventListener("click" , e =>{
+		let clickedElm = e.target;
 
-    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
-        nav.classList.remove("active");
-    }
-});
+		if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+			nav.classList.remove("active");
+		}
+	});
 
 
-// bloquear f12 e clique direito
-// document.onkeydown = function (event) {
-//     event = (event || window.event);
-//     if (event.keyCode == 123 || event.keyCode == 18)
-//     {
-//           return false;
-//     }
-// }
-// document.addEventListener('contextmenu', event => event.preventDefault());
+	// bloquear f12 e clique direito
+	document.onkeydown = function (event) {
+		event = (event || window.event);
+		if (event.keyCode == 123 || event.keyCode == 18)
+		{
+			return false;
+		}
+	}
+	document.addEventListener('contextmenu', event => event.preventDefault());
 
 </script>
 
