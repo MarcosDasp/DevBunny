@@ -553,14 +553,14 @@ body.addEventListener("click" , e =>{
 });
 
 // bloquear f12 e clique direito
-// document.onkeydown = function (event) {
-//     event = (event || window.event);
-//     if (event.keyCode == 123 || event.keyCode == 18)
-//     {
-//           return false;
-//     }
-// }
-// document.addEventListener('contextmenu', event => event.preventDefault());
+ document.onkeydown = function (event) {
+     event = (event || window.event);
+     if (event.keyCode == 123 || event.keyCode == 18)
+     {
+           return false;
+     }
+ }
+ document.addEventListener('contextmenu', event => event.preventDefault());
 
     </script>
 </body>
