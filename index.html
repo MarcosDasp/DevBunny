@@ -10,7 +10,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
    <!-- Ícone da aba do navegador -->
-   <link rel="shortcut icon" href="icon.svg" type="image/x-icon">
+   <link rel="shortcut icon" href="/img/icon.svg" type="image/x-icon">
    
    <!-- CSS principal -->
    <style>
@@ -176,7 +176,7 @@
 
         /* Seção Hero */
         .hero {
-            background: url('computer2.jpg') no-repeat center center;
+            background: url('/img/computer2.jpg') no-repeat center center;
             background-size: cover;
             display: flex;
             align-items: center;
@@ -214,30 +214,23 @@
             font-size: 1.5em;
         }
 
-        .hero-content button {
-            margin-top: 50px;
-            transition: all 0.5s ease;
-            color: #fff;
-            border: 3px solid white;
-            text-align: center;
-            line-height: 1;
-            font-size: 17px;
-            background-color: transparent;
-            padding: 10px;
-            outline: none;
-            border-radius: 25px;
-        }
-
-        .hero-content button:hover {
-            color: #001F3F;
-            background-color: #fff;
-        }
-
-        .hero i {
+        .role-mais{
             position: absolute;
-            font-size: 50px;
+            font-size: 0.75rem;
             bottom: 25px;
             animation: float 2s ease-in-out infinite;
+            user-select: none;
+            opacity: 60%;
+            z-index: 1;
+        }
+
+        .role-mais a{
+            text-decoration: none;
+            color: #CCC;
+        }
+
+        .role-mais i{
+            font-size: 2.188rem;
         }
 
         @keyframes float {
@@ -248,6 +241,7 @@
                 transform: translateY(-20px);
             }
         }
+
 
         /* Responsividade da seção Hero */
         @media (max-width: 790px) {
@@ -415,6 +409,28 @@
             text-decoration: none;
         }
 
+        .social-dev{
+            display: flex;
+            justify-content: center
+        }
+
+        .social-dev a{
+            font-size: 1.57em;
+            color: var(--text-color);
+            list-style: none;
+            margin: 15px;
+        }
+
+        .social-dev i{
+            padding: 10px;
+            border: 2px solid #cccccc;
+            border-radius: 100%;
+        }
+
+        .social-dev a:hover{
+            color: #007bff;
+        }
+
         /* Responsividade da seção Contato */
         @media (max-width: 790px) {
             .mapa {
@@ -476,15 +492,19 @@
         <div class="hero-content">
             <h1>Bem-vindo à DevBunny</h1>
             <p>Inovadores. Idealizadores.</p>
-            <a href="#sobre"><button>Saiba mais</button></a>
         </div>
-        <i class='bx bx-chevrons-down'></i>
+        <div class="role-mais">
+            <a href="#sobre">
+                <p>Role para saber mais</p>
+                <i class='bx bx-chevrons-down'></i>
+            </a>
+        </div>
     </section>
 
     <!-- Seção Sobre -->
     <section id="sobre" class="sobre">
         <div class="sobre-content">
-            <img src="logo.svg" alt="Logo da Empresa" class="logo_sobre">
+            <img src="/img/logo.svg" alt="Logo da Empresa" class="logo_sobre">
             <div class="texto-sobre">
                 <h2>Sobre Nós</h2>
                 <p>A DevBunny é uma startup que se configura como uma software house cuja missão é apoiar a transformação digital de empresas que buscam a Tecnologia como forma de crescimento, sustentação, evolução, continuidade e ampliação de seus negócios. <br>
@@ -499,36 +519,36 @@
             <h2>Conheça Nossa Equipe</h2>
             <div class="cards-equipe">
                 <div class="card">
-                    <img src="rodrigo_reis.jpeg" alt="Foto do Funcionário 1" class="foto-funcionario">
+                    <img src="/img/rodrigo_reis.jpeg" alt="Foto do Funcionário 1" class="foto-funcionario">
                     <h3>Rodrigo Reis</h3>
                     <p>Instrutor e Consultor GeneXus com 19 anos de experiência em infraestrutura de TI,
                         gestão de serviços e projeto e desenvolvimento de software.</p>
                     <div class="redes-sociais">
                         <a href="https://www.linkedin.com/in/paulo-rodrigo-dos-reis-matheus-196a5048/" target="_blank">
-                            <img class="redes-sociais-img" src="linkedin.svg" alt="">
+                            <img class="redes-sociais-img" src="/img/linkedin.svg" alt="">
                             LinkedIn
                         </a>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="elder_reis.jpeg" alt="Foto do Funcionário 2" class="foto-funcionario">
+                    <img src="/img/elder_reis.jpeg" alt="Foto do Funcionário 2" class="foto-funcionario">
                     <h3>Eder Provasi</h3>
                     <p>Profissional com mais de 14 anos de experiência prática no setor de TI,
                         especializado como Coordenador de Desenvolvimento em GeneXus.</p>
                     <div class="redes-sociais">
                         <a href="https://www.linkedin.com/in/eder-reis-provasi-2394a316/" target="_blank">
-                            <img class="redes-sociais-img" src="linkedin.svg" alt="">
+                            <img class="redes-sociais-img" src="/img/linkedin.svg" alt="">
                             LinkedIn
                         </a>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="sergio_rosa.jpeg" alt="Foto do Funcionário 1" class="foto-funcionario">
+                    <img src="/img/sergio_rosa.jpeg" alt="Foto do Funcionário 1" class="foto-funcionario">
                     <h3>Sérgio Rosa</h3>
                     <p>Experiência de mais de 20 anos em Criação, Desenvolvimento e Gestão de Negócios e equipes, Gestão e Estratégia Comercial e Controladoria no setor de TI.</p>
                     <div class="redes-sociais">
                         <a href="https://www.linkedin.com/in/paulo-rodrigo-dos-reis-matheus-196a5048/" target="_blank">
-                            <img class="redes-sociais-img" src="linkedin.svg" alt="">
+                            <img class="redes-sociais-img" src="/img/linkedin.svg" alt="">
                             LinkedIn
                         </a>
                     </div>
@@ -550,7 +570,13 @@
                     R. Joaquim Rodrigues, 1085 - Distrito do Parque, São José do Rio Preto - SP, 15092-607</p>
                     <br>
                     <p>Email: <a class="email" href="mailto:contato@devbunny.com.br" target="_blank">contato@devbunny.com.br</a></p>
+                    <br>
+                    <div class="social-dev" >  
+                        <a href="https://www.instagram.com/devbunnyit/" target="_blank"><i class='bx bxl-instagram'></i></a></li>  
+                        <a href="https://www.linkedin.com/company/devbunny/" target="_blank"><i class='bx bxl-linkedin' ></i></i></a></li>  
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -562,7 +588,7 @@
 
     <script>
         
-        // Código JavaScript para selecionar e armazenar em variáveis alguns elementos 
+        // Código JavaScript para selecionar e armazenar em variáveis alguns elementos do HTML
         const body = document.querySelector("body"),
             nav = document.querySelector("nav"),
             sidebarOpen = document.querySelector(".sidebarOpen"),
@@ -570,10 +596,13 @@
             
 
         //  Código JS para alternar a barra lateral
+
+        //Esse daqui faz com que, quando você ta no celular, e clica para abrir o botão de menu, ele coloca a classe "ativo"
         sidebarOpen.addEventListener("click" , () =>{
             nav.classList.add("active");
         });
 
+        //Já esse daqui, é para quando o menu lateral tiver aberto, e você clicar em qualquer lugar que não faça parte do menu lateral, ele vai fechar o menu lateral
         body.addEventListener("click" , e =>{
             let clickedElm = e.target;
 
@@ -581,16 +610,6 @@
                 nav.classList.remove("active");
             }
         });
-
-        // Não permite que cliquem com o Botão Direito nem usem o F12 (sujeito a ser removido)
-        document.onkeydown = function (event) {
-            event = (event || window.event);
-            if (event.keyCode == 123 || event.keyCode == 18)
-            {
-                return false;
-            }
-        }
-        document.addEventListener('contextmenu', event => event.preventDefault());
 
     </script>
 
