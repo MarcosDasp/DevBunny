@@ -1,0 +1,75 @@
+/* Responsividade da seção Hero */
+@media (max-width: 790px) {
+    .hero {
+        height: 95vh;
+    }
+}
+
+/* Responsividade da seção Equipe */
+
+@media (max-width: 768px) {
+    .cards-equipe{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: calc(100% - 40px);
+    }
+}
+
+/* Responsividade da seção Contato */
+@media (max-width: 790px) {
+    .mapa {
+        height: 350px;
+    }
+
+    .mapa-informacoes{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Responsividade da navegação */
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu {
+        left: 0;
+    }
+
+    .menu .logo-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-toggle .sidebarClose {
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a {
+        display: block;
+        margin-top: 20px;
+    }
+}

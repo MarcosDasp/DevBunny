@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --nav-color-secundary: #2425265e;
+    --side-nav: #242526;
+    --text-color: #CCC;
+}
+
+/* Estilo do corpo */
+body {
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+/* Seção Hero */
+.hero {
+    background: url('/img/computer2.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Escurece a imagem de fundo para melhor legibilidade do texto */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+}
+
+.role-mais{
+    position: absolute;
+    font-size: 0.75rem;
+    bottom: 25px;
+    animation: float 2s ease-in-out infinite;
+    user-select: none;
+    opacity: 60%;
+    z-index: 1;
+}
+
+.role-mais a{
+    text-decoration: none;
+    color: #CCC;
+}
+
+.role-mais i{
+    font-size: 2.188rem;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+/* Seção Sobre */
+.sobre {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.sobre-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.logo_sobre {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.texto-sobre h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.texto-sobre p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Seção Equipe */
+.equipe {
+    border-top: 1px solid #393838;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.equipe-content {
+    max-width: 1200px;
+    margin: auto;
+    color: #fff;
+}
+
+.equipe-content h2 {
+    font-size: 2em;
+    margin-bottom: 35px;
+    color: #fff;
+}
+
+.cards-equipe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.card {
+    flex:1;
+    background-color: var(--body-color);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: calc(33.333% - 40px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.foto-funcionario {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.redes-sociais a {
+    margin: 0 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.redes-sociais a:hover {
+    text-decoration: underline;
+}
+
+.redes-sociais-img{
+    width: 20px;
+    height: 15px;
+}
+
+/* Seção Contato */
+.contato {
+    padding: 70px 20px;
+    text-align: center;
+    border-top: 1px solid #393838;
+    color: white;
+}
+
+.contato-content h2{
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.mapa-informacoes {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    color: var(--text-color);
+}
+
+.mapa {
+    flex: 1;
+    height: 400px;
+    margin: 25px;
+    max-width: 500px;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.informacoes-contato {
+    flex: 1;
+    max-width: 400px;
+    margin-top: 50px;
+}
+
+.informacoes-contato .email {
+    color: #0170BC;
+    text-decoration: none;
+}
+
+.social-dev{
+    display: flex;
+    justify-content: center
+}
+
+.social-dev a{
+    font-size: 1.57em;
+    color: var(--text-color);
+    list-style: none;
+    margin: 15px;
+}
+
+.social-dev i{
+    padding: 10px;
+    border: 2px solid #cccccc;
+    border-radius: 100%;
+}
+
+.social-dev a:hover{
+    color: #007bff;
+}
+
+/* Seção Footer */
+.footer {
+    margin-top: 100px;
+    border-top: 1px solid #393838;
+    background-color: var(--nav-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
