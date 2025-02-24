@@ -30,7 +30,7 @@ body {
 
 /* Seção Hero */
 .hero {
-    background: url('img/computer2.jpg') no-repeat center center;
+    background: url('/img/computer2.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
